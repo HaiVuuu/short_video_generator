@@ -1,0 +1,4 @@
+[console_scripts]
+static_ffmpeg = static_ffmpeg.run:main_static_ffmpeg
+static_ffmpeg_paths = static_ffmpeg.run:main_print_paths
+static_ffprobe = static_ffmpeg.run:main_static_ffprobe

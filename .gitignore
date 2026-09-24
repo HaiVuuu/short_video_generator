@@ -1,0 +1,23 @@
+# API Keys & Secrets
+.env
+*.env
+config.py  # Nếu bạn để key trực tiếp trong config thay vì .env
+
+# Dữ liệu render tạm và video thành phẩm nặng
+output/
+test_audio_samples/
+*.mp4
+*.mp3
+*.srt
+
+# File cache Python & môi trường ảo
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Thư mục IDE
+.vscode/
+.idea/

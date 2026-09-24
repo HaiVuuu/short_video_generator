@@ -1,0 +1,34 @@
+{
+  "illustration": {
+    "status": "done",
+    "error": null
+  },
+  "image_description": {
+    "status": "done",
+    "error": null
+  },
+  "story": {
+    "status": "done",
+    "error": null
+  },
+  "clean": {
+    "status": "done",
+    "error": null
+  },
+  "audio": {
+    "status": "done",
+    "error": null
+  },
+  "captions": {
+    "status": "done",
+    "error": null
+  },
+  "video": {
+    "status": "done",
+    "error": null
+  },
+  "metadata": {
+    "status": "done",
+    "error": null
+  }
+}
