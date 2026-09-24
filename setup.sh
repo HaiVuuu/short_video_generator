@@ -1,15 +1,28 @@
-# Gemini Multimodal & Text Generation
-google-genai>=0.1.1
+#!/usr/bin/env bash
+# One-time setup: creates a virtual environment, installs dependencies, and prepares FFmpeg binaries.
+# Usage: bash setup.sh
+set -e
 
-# Neural Text-to-Speech
-edge-tts>=6.1.10
+cd "$(dirname "$0")"
 
-# Audio & Video Processing Utilities
-static-ffmpeg>=2.5
-python-dotenv>=1.0.0
-requests>=2.31.0
+echo "[1/3] Creating virtual environment in ./venv ..."
+python3 -m venv venv
 
-# Optional: YouTube Data API v3 Upload
-google-api-python-client>=2.100.0
-google-auth-oauthlib>=1.1.0
-google-auth-httplib2>=0.1.1
+echo "[2/3] Installing dependencies..."
+./venv/bin/pip install --upgrade pip
+./venv/bin/pip install -r requirements.txt
+
+echo "[3/3] Fetching bundled static FFmpeg binaries..."
+./venv/bin/python -c "import static_ffmpeg; static_ffmpeg.add_paths()"
+
+echo ""
+echo "============================================================"
+echo "Setup complete!"
+echo ""
+echo "To run the pipeline:"
+echo "  ./venv/bin/python scripts/run_pipeline.py"
+echo ""
+echo "Or activate the virtual environment first:"
+echo "  source venv/bin/activate"
+echo "  python scripts/run_pipeline.py"
+echo "============================================================"
