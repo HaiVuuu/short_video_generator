@@ -1,20 +1,27 @@
 @echo off
-REM One-time setup: creates a virtual environment and installs dependencies.
+REM One-time setup: creates a virtual environment, installs dependencies, and prepares FFmpeg binaries.
 REM Usage: setup.bat
 
 cd /d "%~dp0"
 
-echo Creating virtual environment in .\venv ...
+echo [1/3] Creating virtual environment in .\venv ...
 python -m venv venv
 
-echo Installing dependencies...
+echo [2/3] Installing dependencies...
 .\venv\Scripts\python -m pip install --upgrade pip
 .\venv\Scripts\pip install -r requirements.txt
 
+echo [3/3] Fetching bundled static FFmpeg binaries...
+.\venv\Scripts\python -c "import static_ffmpeg; static_ffmpeg.add_paths()"
+
 echo.
-echo Done. From now on, run pipeline scripts with:
-echo   venv\Scripts\python scripts\run_pipeline.py
+echo ============================================================
+echo Setup complete!
 echo.
-echo Or activate the environment first so you can just use 'python':
-echo   venv\Scripts\activate
-echo   python scripts\run_pipeline.py
+echo To run the pipeline:
+echo    .\venv\Scripts\python scripts\run_pipeline.py
+echo.
+echo Or activate the virtual environment first:
+echo    .\venv\Scripts\activate
+echo    python scripts\run_pipeline.py
+echo ============================================================
