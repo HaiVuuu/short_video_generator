@@ -1,21 +1,15 @@
-#!/usr/bin/env bash
-# One-time setup: creates a virtual environment and installs dependencies.
-# Usage: bash setup.sh
-set -e
+# Gemini Multimodal & Text Generation
+google-genai>=0.1.1
 
-cd "$(dirname "$0")"
+# Neural Text-to-Speech
+edge-tts>=6.1.10
 
-echo "Creating virtual environment in ./venv ..."
-python3 -m venv venv
+# Audio & Video Processing Utilities
+static-ffmpeg>=2.5
+python-dotenv>=1.0.0
+requests>=2.31.0
 
-echo "Installing dependencies..."
-./venv/bin/pip install --upgrade pip
-./venv/bin/pip install -r requirements.txt
-
-echo ""
-echo "Done. From now on, run pipeline scripts with:"
-echo "  ./venv/bin/python scripts/run_pipeline.py"
-echo ""
-echo "Or activate the environment first so you can just use 'python':"
-echo "  source venv/bin/activate"
-echo "  python scripts/run_pipeline.py"
+# Optional: YouTube Data API v3 Upload
+google-api-python-client>=2.100.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
