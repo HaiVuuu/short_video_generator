@@ -41,7 +41,9 @@ Unlike conventional video pipelines that generate narrative and visuals disconne
 ├── requirements.txt          # Python dependencies
 └── status.json               # Auto-generated execution audit logs
 ```
-##Core Technologies
+---
+
+## Core Technologies
 
 Vision & LLM: Google Gemini 2.0 Flash (google-genai SDK) / Multimodal LLM endpoints.
 
@@ -52,7 +54,7 @@ Media Engine: FFmpeg & FFprobe (Custom complex filter chains for 9:16 motion int
 Automation: Python 3.10+, Batch Processing with isolated state recovery (status.json).
 
 Quickstart
-###1. Prerequisites
+### 1. Prerequisites
 Python 3.10+
 
 FFmpeg installed and added to your system PATH:
@@ -64,7 +66,7 @@ brew install ffmpeg
 # Linux (Ubuntu/Debian)
 sudo apt install ffmpeg
 ```
-###2. Environment Setup
+### 2. Environment Setup
 ```
 # Clone the repository
 git clone [https://github.com/HaiVuuu/short_video_generator.git](https://github.com/HaiVuuu/short_video_generator.git)
@@ -78,22 +80,27 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-###3. Configuration
+### 3. Configuration
 Copy the configuration template:
 ```
 cp config.example.py config.py
 ```
+
 Edit config.py with your credentials:
+
 ```
 GEMINI_API_KEY = "your_gemini_api_key"
 VIDEO_RESOLUTION = "1080x1920"
 VIDEO_FPS = 30
 ```
-###4. Running the Pipeline
+
+### 4. Running the Pipeline
 Run the full pipeline sequentially:
+
 ```
 python scripts/run_pipeline.py
 ```
+
 
 To run individual steps in isolation:
 ```
@@ -103,7 +110,9 @@ python scripts/02_inspect_image.py
 # Example: Assemble video from existing assets
 python scripts/06_assemble_video.py
 ```
+---
 Technical FeaturesFrame Jitter Elimination on 9:16 Aspect RatiosWhen placing landscape artwork onto a vertical $1080 \times 1920$ canvas, dynamic scaling often causes subpixel jitter due to odd coordinate rounding. This pipeline solves the issue by enforcing an RGBA alpha-channel canvas pad:
+
 ```
 [0:v]scale=1080:-2:force_original_aspect_ratio=decrease,format=rgba,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x00000000[fg_canvas]
 ```
