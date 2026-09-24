@@ -40,7 +40,7 @@ Unlike conventional video pipelines that generate narrative and visuals disconne
 ├── config.example.py         # Environmental template
 ├── requirements.txt          # Python dependencies
 └── status.json               # Auto-generated execution audit logs
-
+```
 ##Core Technologies
 
 Vision & LLM: Google Gemini 2.0 Flash (google-genai SDK) / Multimodal LLM endpoints.
