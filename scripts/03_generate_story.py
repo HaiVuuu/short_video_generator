@@ -53,7 +53,7 @@ def run(row):
     )
 
     response = client.models.generate_content(
-        model="gemini-3.1-flash-lite",
+        model="   ",
         contents=prompt,
         config=config
     )
