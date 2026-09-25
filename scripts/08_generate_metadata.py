@@ -12,23 +12,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import OLLAMA_URL, OLLAMA_MODEL, OLLAMA_METADATA_TEMPERATURE
 from pipeline_utils import load_topics, story_dir
 
-METADATA_SYSTEM_PROMPT = """You are a YouTube SEO expert specializing in dark folklore, art history, and mythology Shorts.
-You output strictly valid JSON with no markdown wrapping or preamble."""
+METADATA_SYSTEM_PROMPT = """             """
 
-METADATA_USER_TEMPLATE = """Story ID: {id}
-Tale: {tale}
-Culture: {culture}
-Artist: {artist}
-Artwork: {artwork_title}
-Script:
-{story}
-
-Generate a JSON object with:
-- "title": A punchy, cinematic YouTube Shorts title (under 50 chars, high CTR, no clickbait quotes).
-- "description": 2-3 sentences explaining the artwork's hidden meaning, followed by attribution: "Artwork: {artist} ({artwork_url})".
-- "tags": Array of 8-12 relevant lowercase tags (mythology, art history, folklore, specific entities).
-
-Output ONLY valid raw JSON."""
+METADATA_USER_TEMPLATE = """         """
 
 def run(row):
     story_id = str(row["id"]).strip()
