@@ -7,9 +7,9 @@ import importlib.util
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
-TOPICS_CSV = os.path.join(BASE_DIR, "topics_single.csv")
-HEADERS = {"User-Agent": "FolktalePipeline/2.0 (contact: nguyendinhvuhai1234@gmail.com)"}
-WIKIMEDIA_API = "https://commons.wikimedia.org/w/api.php"
+TOPICS_CSV = os.path.join(BASE_DIR, "topics.example.csv")
+HEADERS = {"User-Agent": "        "}
+XXXXX_API = "         "
 
 
 def load_topics():
