@@ -15,31 +15,9 @@ from pipeline_utils import load_topics, story_dir
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
-STORY_SYSTEM_PROMPT = """You are an elite dark folklore storyteller and art historian writing narration scripts for cinematic YouTube Shorts.
-Your tone is psychological, cold, atmospheric, and deeply dramatic.
-You ground every sentence in the physical brushwork, anatomy, and horrified expressions of the artwork."""
+STORY_SYSTEM_PROMPT = """           """
 
-STORY_USER_PROMPT_TEMPLATE = """Context:
-- Artwork: {artwork_title}
-- Artist: {artist}
-- Myth/Lore Tale: {tale}
-- Narrative Angle: {variation_angle}
-- Observed Visual Inspection Details:
-{image_description}
-
-Task: Write a strictly 115 to 130-word narration script for a YouTube Short. Follow this structure:
-1. THE UNCONVENTIONAL HOOK (1 sentence): 
-   - Plunge directly into the most harrowing action, visceral terror, or physical wound in the scene.
-   - Weave {artist} and {tale} into the panic organically.
-   - NEVER use clichés like 'In this chilling work...' or 'stripped of its romantic veneer'.
-2. VISUAL GROUNDING (1-2 sentences): Anchor the viewer's eyes onto specific physical details from the Observed Visual Inspection (e.g. blood, tangled carpets, dilated pupils, limp limbs).
-3. THE PSYCHOLOGICAL ABYSS (2 sentences): Unpack the irreversible tragedy and dread according to the Narrative Angle.
-4. FINAL COLD VERDICT (1 sentence): A devastating realization about guilt, time, or mortality that lingers after the video ends.
-
-CONSTRAINTS:
-- No meta-words (DO NOT say 'this painting', 'we see', 'the frame shows').
-- Output ONLY the spoken narration text. No titles, no notes.
-- Word count: strictly 115 - 130 words."""
+STORY_USER_PROMPT_TEMPLATE = """         """
 
 
 def run(row):
