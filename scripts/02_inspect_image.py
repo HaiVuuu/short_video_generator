@@ -17,16 +17,7 @@ from pipeline_utils import load_topics, story_dir
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 # Prompt phổ quát (Universal) - dùng cho mọi nền văn hóa, mọi thể loại tranh
-UNIVERSAL_VISION_PROMPT = """Analyze this illustration frame with objective, museum-grade visual accuracy:
-- Primary Subjects & Anatomy: Identify all distinct figures, entities, or prominent anatomical elements visible in this frame (e.g. human postures, creatures, exposed limbs, silhouettes).
-- Physical Actions & Interactions: Describe what each figure is physically doing, holding, or looking at. Note any tools, weapons, garments, or contact between objects. If none, state 'isolated'.
-- Environment & Spatial Setting: Describe the immediate setting (indoor chamber, body of water, cliff, forest, open sky), ground plane, and lighting condition.
-
-Strict Rules:
-- Return strictly 3 concise, factual bullet points corresponding to the 3 categories above.
-- Record ONLY what is visually rendered in the brushwork/linework.
-- Do NOT guess identities, allegories, or story titles.
-- Do NOT invent objects or animals that are not explicitly delineated."""
+UNIVERSAL_VISION_PROMPT = """     """
 
 
 def describe_single_frame(image_path, model_name="gemini-2.0-flash"):
@@ -59,8 +50,8 @@ def run(row):
             return
 
     descriptions = []
-    # Bạn có thể đổi sang 'gemini-2.0-flash-lite' hoặc 'gemini-2.5-flash' tùy nhu cầu thử nghiệm
-    active_model = "gemini-3.1-flash-lite"
+    
+    active_model = "    "
 
     for idx, img_path in enumerate(img_patterns):
         print(f"  [vision-api] Phân tích góc máy {idx+1}/{len(img_patterns)} ({os.path.basename(img_path)}) bằng {active_model}...")
